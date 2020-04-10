@@ -48,9 +48,6 @@ typedef CartesianCoord<int> coord_t;
 vector<coord_t> knn ( int k, vector<coord_t> &points, const coord_t &q){
     myComparator<int> mc(q);
     sort(points.begin(), points.end(), mc);
-    for(int i=0; i<k; i++) {
-        cout << points[i] << "\n";
-    }
     vector<coord_t> result(k);
     copy_n(points.begin(), k, result.begin());
     return result;
